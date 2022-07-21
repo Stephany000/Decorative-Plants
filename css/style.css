@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins&family=Teko:wght@300&display=swap');
+
+:root{
+    --c-link: rgb(166,166,166);
+    --c-linl-hover: rgb(33,96,93);
+    --c-title: rgb(51,148,118);
+    --c-bg-nav: rgb(135, 225, 199);
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Teko', Open Sans;
+}
+
+body{
+    background-image: url("https://images.pexels.com/photos/565998/pexels-photo-565998.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+
+li {
+    list-style: none;
+}
+
+a{
+    color: var(--c-link);
+    text-decoration: none;
+}
+
+.navbar{
+    min-height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+    margin: 0 70px 0 70px;
+}
+
+.nav-menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+}
+
+.nav-branding{
+    font-size: 3rem;
+    color: var(--c-title);
+}
+
+.nav-link{
+    transition: 0.7s ease;
+    font-size: 1.5rem;
+}
+
+.nav-link:hover{
+    color: var(--c-linl-hover);
+    text-decoration: underline;
+}
+
+.hamburger{
+    display: none;
+    cursor: pointer;
+}
+
+.bar{
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--c-link);
+}
+
+@media(max-width:768px){
+    .hamburger{
+        display: block;
+    }
+
+    .hamburger.active .bar:nth-child(2){
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1){
+        transform: translate(8px) rotate(45);
+    }
+
+    .hamburger.active .bar:nth-child(3){
+        transform: translate(-8px) rotate(-45);
+    }
+
+    .nav-link:hover{
+        color: var(--c-linl-hover);
+        text-decoration: underline;
+    }
+
+    .nav-menu{
+        position: fixed;
+        left: 100%;
+        top: 70px;
+        gap: 0;
+        flex-direction: column;
+        border: gray 1px;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+    }
+    .navbar{
+        margin: auto;
+    }
+
+    .nav-item{
+        margin: 16px 0;
+    }
+
+    .nav-menu.active{
+        left: 0;
+    }
+}
